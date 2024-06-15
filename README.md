@@ -2,7 +2,7 @@
 Deep learning model for irregular clinical time series data.
 
 # Architecture
-![](assets/model_architecture.jpg)
+![](assets/architecture.jpg)
 
 # Results
-![](assets/results.jpg)
+![](assets/results.png)
