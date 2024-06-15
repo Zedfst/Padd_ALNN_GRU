@@ -7,6 +7,8 @@
 import glob
 import pandas as pd
 import numpy as np
+# from datetime import datetime
+# from tqdm import tqdm
 from Utils import *
 
 
@@ -83,6 +85,17 @@ print(f'Average length per univaraite {average_length}')
 #See outcomes dataframe above. 
 VALUES,TIMESTAMPS,MASKS,PADDINGS,OUTCOMES=samplesConstructorPhysionet(
     data,outcomes,univariate_length,average_length,target_name='In-hospital_death',mean_length=False)
+
+
+# In[ ]:
+
+
+print(np.isnan(VALUES).any())
+VALUES=np.where(np.isnan(VALUES),0,VALUES)
+MASKS=np.where(np.isnan(VALUES),0,MASKS)
+VALUES=np.where(VALUES<0,0,VALUES)
+MASKS=np.where(VALUES<0,0,MASKS)
+print(np.isnan(VALUES).any())
 
 
 # In[ ]:
